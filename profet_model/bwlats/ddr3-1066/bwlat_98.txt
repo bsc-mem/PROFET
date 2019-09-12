@@ -1,0 +1,77 @@
+################################################################################
+# Copyright (c) 2019, Milan Radulovic
+#                     Rommel Sanchez Verdejo
+#                     Paul Carpenter
+#                     Petar Radojkovic
+#                     Bruce Jacob
+#                     Eduard Ayguade
+#                     Contact: milan.radulovic [at] bsc [dot] es
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+#     * Redistributions of source code must retain the above copyright notice,
+#       this list of conditions and the following disclaimer.
+#
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#
+#     * Neither the name of the copyright holder nor the names
+#       of its contributors may be used to endorse or promote products
+#       derived from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+# OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+################################################################################
+
+66000.00 1500.0   # rd: 44155.196, wr: 28457.989
+60384.787 606.72765   # rd: 59047.339, wr: 1337.448
+60343.302 576.55598   # rd: 58975.860, wr: 1367.441
+60089.858 544.71581   # rd: 58837.522, wr: 1252.336
+59813.462 501.57198   # rd: 58593.506, wr: 1219.956
+59500.530 472.79661   # rd: 58287.027, wr: 1213.503
+57170.589 386.05316   # rd: 56003.624, wr: 1166.965
+51312.621 323.30453   # rd: 50263.132, wr: 1049.489
+48759.219 311.71868   # rd: 47760.946, wr: 998.274
+46319.526 303.35045   # rd: 45369.810, wr: 949.715
+44067.363 296.94623   # rd: 43162.893, wr: 904.471
+41995.666 291.79989   # rd: 41132.250, wr: 863.417
+40080.302 287.44661   # rd: 39254.721, wr: 825.581
+38312.417 283.41084   # rd: 37523.022, wr: 789.396
+36718.617 279.65173   # rd: 35961.086, wr: 757.532
+35205.702 276.39273   # rd: 34478.626, wr: 727.077
+33783.235 273.69472   # rd: 33084.561, wr: 698.673
+32495.800 271.2972   # rd: 31816.825, wr: 678.975
+31275.684 269.29429   # rd: 30626.942, wr: 648.742
+30169.535 267.41893   # rd: 29543.104, wr: 626.431
+29108.300 265.82429   # rd: 28503.413, wr: 604.886
+28125.676 264.17311   # rd: 27540.340, wr: 585.337
+27186.560 262.57586   # rd: 26620.064, wr: 566.496
+26326.275 261.18863   # rd: 25776.797, wr: 549.478
+25506.031 260.20368   # rd: 24972.917, wr: 533.112
+24742.734 259.57761   # rd: 24225.090, wr: 517.644
+21718.308 259.1314   # rd: 21261.266, wr: 457.042
+19761.560 255.89485   # rd: 19343.726, wr: 417.833
+18121.929 253.97069   # rd: 17737.679, wr: 384.250
+16732.692 252.86403   # rd: 16376.585, wr: 356.107
+15537.489 251.76799   # rd: 15205.553, wr: 331.936
+14504.318 250.58323   # rd: 14192.689, wr: 311.630
+13606.954 249.02678   # rd: 13314.493, wr: 292.461
+12806.315 248.7382   # rd: 12530.220, wr: 276.094
+12097.148 249.71711   # rd: 11835.270, wr: 261.880
+11461.122 248.87058   # rd: 11213.775, wr: 247.347
+7522.779 245.37986   # rd: 7357.872, wr: 164.906
+5618.324 244.48555   # rd: 5486.294, wr: 132.029
+4471.380 244.24585   # rd: 4367.797, wr: 103.583
+3715.370 244.6621   # rd: 3626.865, wr: 88.506
+3185.381 244.87565   # rd: 3107.445, wr: 77.935

@@ -1,0 +1,71 @@
+################################################################################
+# Copyright (c) 2019, Milan Radulovic
+#                     Rommel Sanchez Verdejo
+#                     Paul Carpenter
+#                     Petar Radojkovic
+#                     Bruce Jacob
+#                     Eduard Ayguade
+#                     Contact: milan.radulovic [at] bsc [dot] es
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+#     * Redistributions of source code must retain the above copyright notice,
+#       this list of conditions and the following disclaimer.
+#
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#
+#     * Neither the name of the copyright holder nor the names
+#       of its contributors may be used to endorse or promote products
+#       derived from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+# OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+################################################################################
+
+100880.398 8000.0   # rd: 100799.129, wr: 81.263
+81355.393 842.60215   # rd: 57016.741, wr: 24338.666
+80385.073 667.40241   # rd: 56332.117, wr: 24052.949
+79935.107 584.90861   # rd: 56022.999, wr: 23912.101
+79141.640 488.23737   # rd: 55466.457, wr: 23675.169
+76834.450 377.18761   # rd: 53846.941, wr: 22987.509
+71370.500 300.68605   # rd: 50025.891, wr: 21344.609
+68111.324 286.19328   # rd: 47755.300, wr: 20356.024
+64234.376 272.75213   # rd: 45026.382, wr: 19208.001
+61033.441 260.14315   # rd: 42788.573, wr: 18244.889
+58245.732 252.32884   # rd: 40826.299, wr: 17419.426
+54639.490 249.1623   # rd: 38308.975, wr: 16330.516
+50515.866 242.78945   # rd: 35425.692, wr: 15090.158
+50013.799 241.42452   # rd: 35070.749, wr: 14943.043
+46284.010 238.21795   # rd: 32462.044, wr: 13821.951
+44189.169 234.95664   # rd: 30996.275, wr: 13192.894
+43527.592 234.64334   # rd: 30528.232, wr: 12999.374
+39144.193 231.47521   # rd: 27463.034, wr: 11681.158
+35087.426 227.50852   # rd: 24620.518, wr: 10466.920
+34706.416 226.26153   # rd: 24351.135, wr: 10355.267
+31284.024 224.31652   # rd: 21959.250, wr: 9324.767
+28653.491 223.68642   # rd: 20115.050, wr: 8538.443
+26836.759 220.24801   # rd: 18840.142, wr: 7996.616
+23206.299 219.84674   # rd: 16301.007, wr: 6905.297
+21761.249 218.57972   # rd: 15287.041, wr: 6474.203
+20237.234 217.60163   # rd: 14218.859, wr: 6018.380
+18632.934 217.31258   # rd: 13096.612, wr: 5536.302
+15709.733 215.17251   # rd: 11045.268, wr: 4664.457
+13584.059 213.76082   # rd: 9557.704, wr: 4026.359
+11864.983 214.18902   # rd: 8351.491, wr: 3513.494
+10628.583 212.76139   # rd: 7480.345, wr: 3148.233
+9624.608 211.33812   # rd: 6777.637, wr: 2846.970
+4913.784 208.88809   # rd: 3473.818, wr: 1439.966
+3292.432 208.18626   # rd: 2333.675, wr: 958.759
+2515.386 207.04185   # rd: 1791.031, wr: 724.356

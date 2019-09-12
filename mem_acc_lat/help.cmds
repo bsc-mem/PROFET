@@ -1,0 +1,7 @@
+-- change the compiler, flags and the size(s) of the file(s) in generator.py and latencyasm.py
+-- change the number of load instructions in latencyasm.py
+python3 generator.py
+./gen/bin/xxxx-gen 
+python3 latencyasm.py lat_bm.c 
+./lat_bm/bin/xxxx
+
