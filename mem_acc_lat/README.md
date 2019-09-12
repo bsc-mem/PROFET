@@ -44,7 +44,7 @@ The final benchmark `lat_bm/bin/00524288` is created.
 
 #### Example of the benchmark execution and measurement with perf
 
-For example, on Sandy Bridge E5-2670 platform, we used the benchmark as following:
+For example, on Sandy Bridge E5-2670 platform, we used the benchmark as follows:
 ```
 numactl -C 0 -m 0 perf stat -e cycles:u,instructions:u,r1008:u,r0408:u ./lat_bm/run/00524288
 ```
