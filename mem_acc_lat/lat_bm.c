@@ -43,23 +43,40 @@ struct line{
 	int pad[14];
 };
 
-struct line array[N];
+struct line *array;
 
 int main(int argc, char *argv[]) {
-	printf("\n");
+	int r, array_bytes;
+	array_bytes = N * sizeof(struct line);
+	r = posix_memalign((void **)&array, 64, array_bytes);
+	if (r != 0) {
+        	printf("Allocation of array failed, return code is %d\n",r);
+        	exit(1);
+	}
 	FILE *f = fopen("array.dat","r");
-	fread(array,sizeof(array),1,f);
-	fclose(f);
-	//printf("%p\n",array);
+	if (f == NULL) {
+		printf("Random walk file cannot be located.\nExecute gen/bin/ first.\n");
+                free(array);
+                exit(1);
+	}
+	r = fread(array,sizeof(*array),N,f);
+	if (r != N) {
+		printf("Reading of the array from file failed, return code is %d\n",r);
+		free(array);
+                exit(1);
+	}
 	register int i asm("ecx") = 5000;
+	register struct line *start asm("rbx");
+	start = array;
 	register struct line *next asm("rdx");
 	next = array->next;
 	__asm__ __volatile__ (
 		"start_loop:"
-			"mov (%rdx), %rdx;"
+			"mov (%rbx,%rdx), %rdx;"
 		"dec %ecx;"
 		"jnz start_loop;"
 	);
-	printf("Done walking the file!\n");
+	free(array);
+	printf("Done walking!\n");
 	exit(0);
 }

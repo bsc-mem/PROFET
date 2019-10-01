@@ -161,7 +161,7 @@ Here are the formats of the traces:
 ### Bandwidth-latency files format
 
 Measured bandwidth and latency dependency for various memory configurations are located in the [bwlats](bwlats/) directory.
-These dependencies were measured using [mem\_bw\_load](/mem\_bw\_load/) benchmark to generate bandwidth load, while measuring memory access latency using [mem\_acc\_lat](/mem\_acc\_lat/) benchmark. We measured total execution CPU cycles, together with page walks and secondary dtlb penalties, using **perf** tool. At the end we subtracted page walks and secondary dtlb penalties from the total number of cycles and divided the result by the number of instructions to get the final per-load memory access latency.
+These dependencies were measured using [mem\_bw\_load](/mem\_bw\_load/) benchmark to generate bandwidth load, while measuring memory access latency using [mem\_acc\_lat](/mem\_acc\_lat/) benchmark. We measured total execution CPU cycles of mem\_acc\_lat benchmark, together with page walks and secondary dtlb penalties, using **perf** tool. At the end we subtracted page walks and secondary dtlb penalties from the total number of cycles and divided the result by the number of instructions to get the final per-load memory access latency.
 
 Each memory configuration has measured dependency for separate RD ratio from 50\% to 100\% of reads in the total traffic. All the files contain measured bandwidth (in MB/s) and latency (in CPU cycles) in the following format:
 

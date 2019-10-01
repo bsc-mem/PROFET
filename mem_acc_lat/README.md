@@ -8,39 +8,32 @@ Execution time or number of CPU cycles of the benchmark execution can be measure
 
 #### Installing the benchmark
 
-Installation requires **python3** and C compiler. We tested the code with **gcc** (higher than 4.9.1) and Intel compiler.
+Installation requires **python** and a **C** compiler. We tested the code with **gcc** (higher than 4.9.1) and **Intel** compiler.
 
-Before installing the benchmark the compiler and compiler flags can be set in **generator.py** and **latencyasm.py** files.
-Also, the size(s) of load file(s) can be set in both files, in the `sizes` list (in kB). It can be a single size, or several sizes. For example, to set the load file size of 512MB, define the variable as `sizes = [524288]`.
+Before installing the benchmark the compiler and compiler flags can be set in **generate.py** file as `CC` and `CFLAGS` variables.
+Also, the size(s) of load file(s) can be set in the `sizes` list (in kB). It can be a single size, or several sizes. For example, to set the load file size of 512MB, define the variable as `sizes = [524288]`.
+Finally, number of load instructions is defined in with `ins` variable.
 
-Finally, number of load instructions is defined in **latencyasm.py** file, with  `ins` variable.
-It is defined in thousands. Therefore, to define 5M instructions, set it to 5000 `ins = 5000`.
-
-First, execute the **generator.py** file to generate the binary which creates the load file.
+First, execute the **generate.py** file to generate the binary which creates the load file, and the benchmark binary which walks the random walk file.
+Put the templates of the generator and benchmark files as arguments.
 ```
-python3 generator.py
+python generate.py generator.c lat_bm.c
 ```
 The following output should be displayed for the 512MB load file:
 ```
-Generating file for size: 524288kB
-gcc -mcmodel=large gen/src/00524288-gen.c -o gen/bin/00524288-gen
-Random walk file gen/bin/00524288-gen generated.
+Generating benchmarks for sizes: 524288kB
+Done generating benchmarks.
+Compiling generator files...
+  gcc -O0 gen/src/00524288-gen.c -o gen/bin/00524288-gen
+Done compiling.
+Compiling benchmark files...
+  gcc -O0 lat_bm/src/00524288.c -o lat_bm/bin/00524288
+Done compiling.
 ```
 Then, execute the created binary `gen/bin/00524288-gen`.
-
 It creates the load file `gen/data/8388608.dat` with size of 512MB. It contains randomized access pattern used later by the pointer-chasing code.
 
-Now lets create our benchmark. Run the **latencyasm.py** with input template argument **lat_bm.c**:
-```
-python3 latencyasm.py lat_bm.c
-```
-It should display:
-```
-Generating benchmark for size: 524288kB
-gcc -mcmodel=large lat_bm/src/00524288.c -o lat_bm/bin/00524288
-Benchmark lat_bm/bin/00524288 generated.
-```
-The final benchmark `lat_bm/bin/00524288` is created.
+Finally, execute the benchmark binary `lat_bm/bin/00524288`, which loads the access pattern from `gen/data/8388608.dat` and executes the pointer-chasing code.
 
 #### Example of the benchmark execution and measurement with perf
 
@@ -49,5 +42,5 @@ For example, on Sandy Bridge E5-2670 platform, we used the benchmark as follows:
 numactl -C 0 -m 0 perf stat -e cycles:u,instructions:u,r1008:u,r0408:u ./lat_bm/run/00524288
 ```
 This way, we execute the benchmark on CPU core0 and measure cycles, instructions, hits in the secondary dtlb and page walks.
-From the total number of cycles we subtract page walks and secondary dtlb penalties (7 cycles on our platform), divide this result with measured number of instructions (~5M),
+From the total number of cycles we subtract page walks and secondary dtlb penalties (7 cycles on our platform), divide this result with number of instructions (5M),
 and this way we get only the latency of the random memory read access, without the cycles needed for address translation.

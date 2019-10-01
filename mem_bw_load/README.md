@@ -6,7 +6,7 @@ The benchmark generates the traffic towards main memory, with two runtime parame
 
 The benchmark is based on the modified STREAM \[[1][]\] benchmark.
 It uses MPI library and optional OpenMP directives.
-Contrary to original STREAM benchmark, it contains only the Copy kernel and the specific kernel functions for different RD ratios are coded in x86 assembly, using AVX instructions and non-temporal stores (defined in **utils.c** file). Also, the content of the arrays at the end is not checked.
+Contrary to original STREAM benchmark, it contains only the Copy kernel while the specific kernel functions for different RD ratios are coded in x86 assembly, using AVX instructions and non-temporal stores (defined in **utils.c** file). Also, the content of the arrays at the end is not checked.
 
 Apart from the runtime parameters, the main code located in the **stream_mpi.c** file contains array size parameter (default at 80,000,000) and number of times the kernel is executed (default is 10 times).
 These parameters can be set in the code, or as compiler flags during the compilation.
@@ -21,6 +21,7 @@ Report. University of Virginia. http://www.cs.virginia.edu/stream/*
 #### Compiling the code
 
 In order to compile the code, set the desired compiler and its flags in the Makefile.
+We tested the code with **gcc** compiler in combination with **OpenMPI** library, and with **Intel** compiler together with and **Intel MPI** library.
 Optionally, array size and ntimes parameters can be set as compiler flags `-DSTREAM_ARRAY_SIZE=...` and `-DNTIMES=...`.
 
 Compile the code by hitting `make`.
@@ -72,5 +73,3 @@ Memory BW load               64                1000       8307.5       7832.0   
 The average generated memory bandwidth from NTIMES iterations is 8307.5 MB/s.
 The highest bandwidth during NTIMES iterations was 8385.8 MB/s while the lowest was 7832.0 MB/s.
 For the best precision, memory bandwidth can be measured using uncore counters (with tools such as **perf**, **LIKWID**, etc.), which we used to get bandwidth-latency dependencies in PROFET model.
-
-The code is currently tested with Intel compiler and Intel MPI library only.
