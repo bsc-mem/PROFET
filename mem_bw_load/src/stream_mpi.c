@@ -49,7 +49,7 @@
 
 /*-----------------------------------------------------------------------
  * The benchmark is based on the modified STREAM benchmark
- * (original STREAM benchmark: http://www.cs.virginia.edu/stream).
+ * (original STREAM benchmark: http://www.cs.virginia.edu/stream/).
  * Contrary to the original STREAM benchmark, it contains only the Copy kernel
  * while the specific kernel functions for different RD ratios are coded
  * in x86 assembly, using AVX instructions and non-temporal stores
