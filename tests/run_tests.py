@@ -47,13 +47,12 @@ def run_tests():
                 if benchmark != benchmarks[-1]:
                     print('', flush=True)
 
-    # Run diff command to compare expected and new outputs
-    with open(diff_path, 'w') as diff_file:
-        subprocess.run(['diff', '--ignore-all-space', '--suppress-common-lines',
-                        expected_out_path, new_out_path], stdout=diff_file)
+    # Compare new.out with expected.out
+    with open(new_out_path, 'r') as new_out_file, open(expected_out_path, 'r') as expected_out_file:
+        new_out_lines = new_out_file.readlines()
+        expected_out_lines = expected_out_file.readlines()
 
-    # Print the test verdict
-    if os.path.getsize(diff_path) == 0:
+    if new_out_lines == expected_out_lines:
         print(f"{OK_COL}[ OK ]")
     else:
         print(f"{BAD_COL}[FAIL]")
