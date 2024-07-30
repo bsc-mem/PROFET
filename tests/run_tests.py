@@ -1,4 +1,5 @@
 import os
+import sys
 import subprocess
 import contextlib
 
@@ -56,7 +57,7 @@ def run_tests():
         return 0  # Return 0 to indicate success
 
     print(f"{BAD_COL}[FAIL]")
-    return 1  # Return 1 to indicate failure
+    sys.exit(1)  # Exit with 1 to indicate failure
 
 if __name__ == '__main__':
     run_tests()
