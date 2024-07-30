@@ -7,7 +7,6 @@ def run_tests():
     # Constants for colored output
     BAD_COL = '\033[0;31m'
     OK_COL = '\033[0;32m'
-    NO_COL = '\033[0m'
 
     test_dir = 'tests/knl_ddr4-2400_mcdram'
     new_out_path = os.path.join(test_dir, 'new.out')
@@ -54,11 +53,10 @@ def run_tests():
 
     if new_out_lines == expected_out_lines:
         print(f"{OK_COL}[ OK ]")
+        return 0  # Return 0 to indicate success
     else:
         print(f"{BAD_COL}[FAIL]")
-
-    print(f"{NO_COL} {test_dir}")
-
+        return 1  # Return 1 to indicate failure
 
 if __name__ == '__main__':
     run_tests()
