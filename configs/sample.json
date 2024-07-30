@@ -1,0 +1,13 @@
+{
+    "CPU": {
+        "Description": "2x Intel Xeon Gold 5218 Cascade Lake",
+        "Ins_ROB": 72,
+        "IPC_max": 2,
+        "Lat_LLC": 17,
+        "MSHR": 12
+    },
+    "DRAM": {
+        "Description": "6x Samsung 16GB DDR4-2666 per socket",
+        "Freq_MHz": 2666
+    }
+}

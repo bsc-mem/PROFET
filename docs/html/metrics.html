@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metrics &mdash; PROFET  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Visualization" href="visualization.html" />
+    <link rel="prev" title="Curves" href="curves.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PROFET
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="estimate_performance.html">estimate_performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="curves.html">Curves</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Metrics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#profet.metrics.Bandwidth"><code class="docutils literal notranslate"><span class="pre">Bandwidth</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Bandwidth.as_unit"><code class="docutils literal notranslate"><span class="pre">Bandwidth.as_unit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Bandwidth.check_same_unit"><code class="docutils literal notranslate"><span class="pre">Bandwidth.check_same_unit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Bandwidth.check_unit"><code class="docutils literal notranslate"><span class="pre">Bandwidth.check_unit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Bandwidth.check_valid_unit"><code class="docutils literal notranslate"><span class="pre">Bandwidth.check_valid_unit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Bandwidth.value_in"><code class="docutils literal notranslate"><span class="pre">Bandwidth.value_in()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Bandwidth.unit"><code class="docutils literal notranslate"><span class="pre">Bandwidth.unit</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Bandwidth.valid_units"><code class="docutils literal notranslate"><span class="pre">Bandwidth.valid_units</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Bandwidth.value"><code class="docutils literal notranslate"><span class="pre">Bandwidth.value</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#profet.metrics.Frequency"><code class="docutils literal notranslate"><span class="pre">Frequency</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Frequency.as_unit"><code class="docutils literal notranslate"><span class="pre">Frequency.as_unit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Frequency.check_valid_unit"><code class="docutils literal notranslate"><span class="pre">Frequency.check_valid_unit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Frequency.value_in"><code class="docutils literal notranslate"><span class="pre">Frequency.value_in()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Frequency.unit"><code class="docutils literal notranslate"><span class="pre">Frequency.unit</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Frequency.valid_units"><code class="docutils literal notranslate"><span class="pre">Frequency.valid_units</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Frequency.value"><code class="docutils literal notranslate"><span class="pre">Frequency.value</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#profet.metrics.Latency"><code class="docutils literal notranslate"><span class="pre">Latency</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Latency.as_unit"><code class="docutils literal notranslate"><span class="pre">Latency.as_unit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Latency.check_same_unit"><code class="docutils literal notranslate"><span class="pre">Latency.check_same_unit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Latency.check_valid_unit"><code class="docutils literal notranslate"><span class="pre">Latency.check_valid_unit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Latency.value_in"><code class="docutils literal notranslate"><span class="pre">Latency.value_in()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Latency.unit"><code class="docutils literal notranslate"><span class="pre">Latency.unit</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Latency.valid_units"><code class="docutils literal notranslate"><span class="pre">Latency.valid_units</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profet.metrics.Latency.value"><code class="docutils literal notranslate"><span class="pre">Latency.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PROFET</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Metrics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/metrics.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-profet.metrics">
+<span id="metrics"></span><h1>Metrics<a class="headerlink" href="#module-profet.metrics" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="profet.metrics.Bandwidth">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profet.metrics.</span></span><span class="sig-name descname"><span class="pre">Bandwidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#profet.metrics.Bandwidth" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="profet.metrics.Bandwidth.as_unit">
+<span class="sig-name descname"><span class="pre">as_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><span class="pre">Bandwidth</span></a></span></span><a class="headerlink" href="#profet.metrics.Bandwidth.as_unit" title="Link to this definition"></a></dt>
+<dd><p>Gives the bandwidth with the value converted from one unit to another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_unit</strong> (<em>str</em>) – units of the output bandwidth values (see self.valid_units)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>new Bandwidth object with the converted value and units</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth">Bandwidth</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="profet.metrics.Bandwidth.check_same_unit">
+<span class="sig-name descname"><span class="pre">check_same_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><span class="pre">Bandwidth</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#profet.metrics.Bandwidth.check_same_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="profet.metrics.Bandwidth.check_unit">
+<span class="sig-name descname"><span class="pre">check_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#profet.metrics.Bandwidth.check_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="profet.metrics.Bandwidth.check_valid_unit">
+<span class="sig-name descname"><span class="pre">check_valid_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#profet.metrics.Bandwidth.check_valid_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="profet.metrics.Bandwidth.value_in">
+<span class="sig-name descname"><span class="pre">value_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#profet.metrics.Bandwidth.value_in" title="Link to this definition"></a></dt>
+<dd><p>Gives the value converted from one unit to another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_unit</strong> (<em>str</em>) – units of the output bandwidth values (see self.valid_units)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>value converted target_unit</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="profet.metrics.Bandwidth.unit">
+<span class="sig-name descname"><span class="pre">unit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#profet.metrics.Bandwidth.unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="profet.metrics.Bandwidth.valid_units">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">valid_units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#profet.metrics.Bandwidth.valid_units" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="profet.metrics.Bandwidth.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#profet.metrics.Bandwidth.value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="profet.metrics.Frequency">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profet.metrics.</span></span><span class="sig-name descname"><span class="pre">Frequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#profet.metrics.Frequency" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="profet.metrics.Frequency.as_unit">
+<span class="sig-name descname"><span class="pre">as_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#profet.metrics.Frequency" title="profet.metrics.Frequency"><span class="pre">Frequency</span></a></span></span><a class="headerlink" href="#profet.metrics.Frequency.as_unit" title="Link to this definition"></a></dt>
+<dd><p>Gives the frequency with the value converted from one unit to another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_unit</strong> (<em>str</em>) – units of the output frequency values (see self.valid_units)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>new Frequency object with the converted value and units</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#profet.metrics.Frequency" title="profet.metrics.Frequency">Frequency</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="profet.metrics.Frequency.check_valid_unit">
+<span class="sig-name descname"><span class="pre">check_valid_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#profet.metrics.Frequency.check_valid_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="profet.metrics.Frequency.value_in">
+<span class="sig-name descname"><span class="pre">value_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#profet.metrics.Frequency.value_in" title="Link to this definition"></a></dt>
+<dd><p>Gives the value converted from one unit to another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_unit</strong> (<em>str</em>) – units of the output frequency values (see self.valid_units)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>value converted target_unit</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="profet.metrics.Frequency.unit">
+<span class="sig-name descname"><span class="pre">unit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#profet.metrics.Frequency.unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="profet.metrics.Frequency.valid_units">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">valid_units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#profet.metrics.Frequency.valid_units" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="profet.metrics.Frequency.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#profet.metrics.Frequency.value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="profet.metrics.Latency">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profet.metrics.</span></span><span class="sig-name descname"><span class="pre">Latency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#profet.metrics.Latency" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="profet.metrics.Latency.as_unit">
+<span class="sig-name descname"><span class="pre">as_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#profet.metrics.Frequency" title="profet.metrics.Frequency"><span class="pre">Frequency</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#profet.metrics.Latency" title="profet.metrics.Latency"><span class="pre">Latency</span></a></span></span><a class="headerlink" href="#profet.metrics.Latency.as_unit" title="Link to this definition"></a></dt>
+<dd><p>Gives the latency with the value converted from one unit to another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_unit</strong> (<em>str</em>) – units of the output latency values (see self.valid_units)</p></li>
+<li><p><strong>freq</strong> (<a class="reference internal" href="#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – CPU frequency, only necessary when converting to or from ‘cycles’. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>new Latency object with the converted value and units</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#profet.metrics.Latency" title="profet.metrics.Latency">Latency</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="profet.metrics.Latency.check_same_unit">
+<span class="sig-name descname"><span class="pre">check_same_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#profet.metrics.Latency" title="profet.metrics.Latency"><span class="pre">Latency</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#profet.metrics.Latency.check_same_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="profet.metrics.Latency.check_valid_unit">
+<span class="sig-name descname"><span class="pre">check_valid_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#profet.metrics.Latency.check_valid_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="profet.metrics.Latency.value_in">
+<span class="sig-name descname"><span class="pre">value_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#profet.metrics.Frequency" title="profet.metrics.Frequency"><span class="pre">Frequency</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#profet.metrics.Latency.value_in" title="Link to this definition"></a></dt>
+<dd><p>Gives the value converted from one unit to another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_unit</strong> (<em>str</em>) – units of the output latency values (see supported_lat_units())</p></li>
+<li><p><strong>freq</strong> (<a class="reference internal" href="#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – CPU frequency, only necessary when converting to or from ‘cycles’. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>value converted target_unit</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="profet.metrics.Latency.unit">
+<span class="sig-name descname"><span class="pre">unit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#profet.metrics.Latency.unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="profet.metrics.Latency.valid_units">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">valid_units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#profet.metrics.Latency.valid_units" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="profet.metrics.Latency.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#profet.metrics.Latency.value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="curves.html" class="btn btn-neutral float-left" title="Curves" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="visualization.html" class="btn btn-neutral float-right" title="Visualization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Barcelona Supercomputing Center.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

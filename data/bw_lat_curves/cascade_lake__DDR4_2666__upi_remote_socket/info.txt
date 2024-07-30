@@ -1,0 +1,7 @@
+CPU: 2x Intel Xeon Gold 5218 Cascade Lake
+- 16 cores per socket. Hyperthreading disabled
+- Frequency: 2.3GHz
+
+Memory: DDR4-2666
+- 6 memory channels per socket
+- 6x 16GB DDR4-2666 per socket

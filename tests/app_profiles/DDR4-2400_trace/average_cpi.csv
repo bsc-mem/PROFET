@@ -1,0 +1,66 @@
+################################################################################
+# Copyright (c) 2023, Valéria S. Girelli
+#                     Pouya Esmaili
+#                     Mariana Carmin
+#                     Petar Radojkovic
+#                     Paul Carpenter
+#                     Eduard Ayguade
+#                     Contact: valeria.soldera [at] bsc [dot] es
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+#     * Redistributions of source code must retain the above copyright notice,
+#       this list of conditions and the following disclaimer.
+#
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#
+#     * Neither the name of the copyright holder nor the names
+#       of its contributors may be used to endorse or promote products
+#       derived from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+# OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+################################################################################
+benchmark  CPI
+astar      1.9050450109
+bwaves     1.2559075149
+bzip2      0.973574957
+cactusADM  1.2506213389
+calculix   0.855140354
+dealII     0.9118837362
+gamess     0.7171685306
+gcc        1.723384468
+GemsFDTD   2.283884895
+gobmk      1.0782994244
+gromacs    1.0809143059
+h264ref    0.8619108069
+hmmer      0.5556921042
+lbm        2.2517525923
+leslie3d   5.2688371839
+libquantum 1.7268808537
+mcf        6.7607543339
+milc       1.7578741049
+namd       0.7571266398
+omnetpp    3.9567930552
+perlbench  0.7722713166
+povray     1.0438396868
+sjeng      0.907053348
+soplex     2.4664775443
+sphinx3    1.190825806
+tonto      0.9265104342
+wrf        1.2571163607
+xalancbmk  1.6489730013
+zeusmp     1.2051663783
+

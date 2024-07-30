@@ -1,10 +1,5 @@
-Copyright (c) 2019, Milan Radulovic
-                    Rommel Sanchez Verdejo
-                    Paul Carpenter
-                    Petar Radojkovic
-                    Bruce Jacob
-                    Eduard Ayguade
-                    Contact: milan.radulovic [at] bsc [dot] es
+Copyright (c) 2023, Barcelona Supercomputing Center
+                    Contact: mariana.carmin [at] bsc [dot] es
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -31,4 +26,3 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-

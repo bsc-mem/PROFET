@@ -1,0 +1,57 @@
+.\" Manpage for profet
+.TH PROFET 1 "July 2024" "1.0" "Profet Manual"
+.SH NAME
+profet \- Analytical model that quantifies the impact of the main memory on application performance.
+.SH SYNOPSIS
+.B profet
+[\fIoptions\fR]
+.SH DESCRIPTION
+.B profet
+is a command-line tool for estimating system performance using two memory configurations.
+.SH OPTIONS
+.TP
+.B \-a, \-\-app-profiling
+Directory containing application profiling files.
+.TP
+.B \-c, \-\-config
+System configuration file.
+.TP
+.B \-\-mem-base
+Directory containing bandwith-latency dependencies for the baseline system.
+.TP
+.B \-\-mem-target
+(Optional) Directory containing bandwith-latency dependencies for the target system.
+.TP
+.B \-b, \-\-benchmarking
+(Optional) Application profiling directory expected to contain subdirectories with the benchmarking app profilings.
+.TP
+.B \-p, \-\-plot-to-pdf
+(Optional) Specify the location for storing the PDF plot.
+.TP
+.B \-w, \-\-ignore-warnings
+(Optional) Ignore warning messages.
+.TP
+.B \-\-run-tests
+Run tests. For development purposes only.
+.SH REQUIRED ARGUMENTS
+.TP
+.B \-a, \-\-app-profiling
+The application profiling directory must be provided.
+.TP
+.B \-c, \-\-config
+The system configuration file must be provided.
+.TP
+.B \-\-mem-base
+The memory baseline file directory must be provided.
+.SH EXAMPLES
+To run the tool with required parameters:
+.PP
+.B profet \-a /path/to/app-profiling \-c /path/to/config.json \-\-mem-base /path/to/mem-base
+.PP
+To run the tool with optional parameters:
+.PP
+.B profet \-a /path/to/app-profiling \-c /path/to/config.json \-\-mem-base /path/to/mem-base \-\-mem-target /path/to/mem-target \-b \-p /path/to/plot.pdf \-w \-\-run-tests
+.SH NOTES
+All paths must exist. For details on the format of input files/directories, please check the documentation.
+.SH AUTHOR
+BSC Memory Technologies Team

@@ -1,7 +1,0 @@
--- change the compiler, flags, the size(s) of the file(s) and the number of load instructions in generate.py
-
-python generate.py generator.c lat_bm.c
-
-./gen/bin/xxxx-gen
-
-./lat_bm/bin/xxxx
