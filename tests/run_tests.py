@@ -1,18 +1,35 @@
 import os
+import sys
 import subprocess
 import contextlib
+import difflib
+
+
+def color_diff(diff_lines):
+    # Color the diff output in case of tests failure
+    # ANSI escape codes for colors
+    green = '\033[92m'
+    red = '\033[91m'
+    reset = '\033[0m'
+    colored_diff = []
+    for line in diff_lines:
+        if line.startswith('+'):
+            colored_diff.append(green + line + reset)
+        elif line.startswith('-'):
+            colored_diff.append(red + line + reset)
+        else:
+            colored_diff.append(line)
+    return colored_diff
 
 
 def run_tests():
     # Constants for colored output
     BAD_COL = '\033[0;31m'
     OK_COL = '\033[0;32m'
-    NO_COL = '\033[0m'
 
     test_dir = 'tests/knl_ddr4-2400_mcdram'
     new_out_path = os.path.join(test_dir, 'new.out')
     expected_out_path = os.path.join(test_dir, 'expected.out')
-    diff_path = os.path.join(test_dir, 'expected_vs_new.diff')
 
     # Remove the old out file if it exists
     if os.path.exists(new_out_path):
@@ -28,7 +45,8 @@ def run_tests():
             app_profiles_path = 'tests/app_profiles/DDR4-2400_trace/'
             profiles = os.listdir(app_profiles_path)
             benchmarks = [d for d in profiles
-                        if os.path.isdir(os.path.join(app_profiles_path, d))]
+                          if os.path.isdir(os.path.join(app_profiles_path, d))]
+            benchmarks = sorted(benchmarks)
 
             for benchmark in benchmarks:
                 print(benchmark, flush=True)
@@ -40,25 +58,33 @@ def run_tests():
                 mem_target = os.path.join('tests/data/bw_lat_curves/mcdram.json')
 
                 call = f'{run_file} -w -a {app_profile} -c {config} --mem-base {mem_baseline} --mem-target {mem_target}'
-                # os.system(call)
                 # Redirecting stdout and stderr of the subprocess to the new_out_file
                 subprocess.run(call, shell=True, stdout=new_out_file, stderr=new_out_file)
 
                 if benchmark != benchmarks[-1]:
                     print('', flush=True)
 
-    # Run diff command to compare expected and new outputs
-    with open(diff_path, 'w') as diff_file:
-        subprocess.run(['diff', '--ignore-all-space', '--suppress-common-lines',
-                        expected_out_path, new_out_path], stdout=diff_file)
+    # Compare new.out with expected.out
+    with open(new_out_path, 'r') as new_out_file, open(expected_out_path, 'r') as expected_out_file:
+        new_out_lines = new_out_file.readlines()
+        expected_out_lines = expected_out_file.readlines()
 
-    # Print the test verdict
-    if os.path.getsize(diff_path) == 0:
+    if new_out_lines == expected_out_lines:
+        # Return 0 to indicate success
         print(f"{OK_COL}[ OK ]")
-    else:
-        print(f"{BAD_COL}[FAIL]")
+        return 0
 
-    print(f"{NO_COL} {test_dir}")
+    # Print difference
+    diff = difflib.unified_diff(
+        expected_out_lines, new_out_lines,
+        fromfile=expected_out_path,
+        tofile=new_out_path,
+        lineterm=''
+    )
+    colored_diff = color_diff(diff)
+    sys.stdout.writelines(colored_diff)
+    print(f"{BAD_COL}[FAIL]")
+    sys.exit(1)  # Exit with 1 to indicate failure
 
 
 if __name__ == '__main__':
