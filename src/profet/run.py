@@ -46,7 +46,6 @@ from profet import estimate_performance
 from profet.metrics import Bandwidth, Latency, Frequency
 from profet.curves import Curves, OvershootError
 from profet.app_profile import AppProfile
-from tests.run_tests import run_tests
 
 
 def latencies_cycles_warning() -> None:
