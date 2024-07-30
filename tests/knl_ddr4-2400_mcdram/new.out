@@ -1,60 +1,96 @@
-h264ref
+GemsFDTD
+IPC base: 0.44
+IPC target: 0.508
+IPC change avg: 15.445%
+IPC change min: 1.164
+IPC change max: 1.278
+CPI base: 2.274
+CPI target: 1.97
+CPI change avg: -13.375%
+CPI change min: 0.953
+CPI change max: 0.879
+
+astar
+IPC base: 0.525
+IPC target: 0.544
+IPC change avg: 3.525%
+IPC change min: 0.754
+IPC change max: 0.273
+CPI base: 1.905
+CPI target: 1.84
+CPI change avg: -3.404%
+CPI change min: 0.255
+CPI change max: 0.708
+
+bwaves
+IPC base: 0.796
+IPC target: 0.787
+IPC change avg: -1.187%
+IPC change min: 0.058
+IPC change max: 0.055
+CPI base: 1.256
+CPI target: 1.271
+CPI change avg: 1.201%
+CPI change min: 0.056
+CPI change max: 0.06
+
+bzip2
+IPC base: 1.026
+IPC target: 0.964
+IPC change avg: -6.014%
+IPC change min: 0.181
+IPC change max: 0.275
+CPI base: 0.975
+CPI target: 1.037
+CPI change avg: 6.399%
+CPI change min: 0.311
+CPI change max: 0.205
+
+cactusADM
+IPC base: 0.8
+IPC target: 0.792
+IPC change avg: -0.974%
+IPC change min: 0.09
+IPC change max: 0.081
+CPI base: 1.25
+CPI target: 1.262
+CPI change avg: 0.984%
+CPI change min: 0.082
+CPI change max: 0.091
+
+calculix
 IPC base: 1.16
-IPC target: 1.141
-IPC change avg: -1.714%
-IPC change min: 0.039
-IPC change max: 0.038
+IPC target: 1.15
+IPC change avg: -0.911%
+IPC change min: 0.011
+IPC change max: 0.011
 CPI base: 0.862
-CPI target: 0.877
-CPI change avg: 1.744%
-CPI change min: 0.039
-CPI change max: 0.041
+CPI target: 0.87
+CPI change avg: 0.919%
+CPI change min: 0.011
+CPI change max: 0.011
 
-povray
-IPC base: 0.958
-IPC target: 0.958
-IPC change avg: -0.05%
+dealII
+IPC base: 1.096
+IPC target: 1.102
+IPC change avg: 0.571%
+IPC change min: 0.125
+IPC change max: 0.135
+CPI base: 0.913
+CPI target: 0.907
+CPI change avg: -0.568%
+CPI change min: 0.134
+CPI change max: 0.123
+
+gamess
+IPC base: 1.394
+IPC target: 1.393
+IPC change avg: -0.074%
 IPC change min: 0.0
 IPC change max: 0.0
-CPI base: 1.044
-CPI target: 1.044
-CPI change avg: 0.05%
-CPI change min: 0.0
-CPI change max: 0.0
-
-lbm
-IPC base: 0.444
-IPC target: 0.751
-IPC change avg: 69.138%
-IPC change min: 7.967
-IPC change max: 9.187
-CPI base: 2.252
-CPI target: 1.333
-CPI change avg: -40.816%
-CPI change min: 3.106
-CPI change max: 2.862
-
-xalancbmk
-IPC base: 0.607
-IPC target: 0.592
-IPC change avg: -2.459%
-IPC change min: 0.558
-IPC change max: 0.387
-CPI base: 1.647
-CPI target: 1.688
-CPI change avg: 2.522%
-CPI change min: 0.407
-CPI change max: 0.589
-
-namd
-IPC base: 1.321
-IPC target: 1.318
-IPC change avg: -0.202%
-IPC change min: 0.0
-IPC change max: 0.0
-CPI base: 0.757
-CPI target: 0.759
-CPI change avg: 0.202%
+CPI base: 0.718
+CPI target: 0.718
+CPI change avg: 0.074%
 CPI change min: 0.0
 CPI change max: 0.0
 
@@ -70,77 +106,17 @@ CPI change avg: -8.222%
 CPI change min: 0.381
 CPI change max: 0.827
 
-perlbench
-IPC base: 1.296
-IPC target: 1.258
-IPC change avg: -2.911%
-IPC change min: 0.098
-IPC change max: 0.092
-CPI base: 0.772
-CPI target: 0.795
-CPI change avg: 2.999%
-CPI change min: 0.098
-CPI change max: 0.104
-
-gamess
-IPC base: 1.394
-IPC target: 1.393
-IPC change avg: -0.074%
-IPC change min: 0.0
-IPC change max: 0.0
-CPI base: 0.718
-CPI target: 0.718
-CPI change avg: 0.074%
-CPI change min: 0.0
-CPI change max: 0.0
-
-zeusmp
-IPC base: 0.829
-IPC target: 0.801
-IPC change avg: -3.388%
-IPC change min: 0.118
-IPC change max: 0.182
-CPI base: 1.206
-CPI target: 1.248
-CPI change avg: 3.507%
-CPI change min: 0.194
-CPI change max: 0.127
-
-GemsFDTD
-IPC base: 0.44
-IPC target: 0.508
-IPC change avg: 15.445%
-IPC change min: 1.164
-IPC change max: 1.278
-CPI base: 2.274
-CPI target: 1.97
-CPI change avg: -13.375%
-CPI change min: 0.953
-CPI change max: 0.879
-
-dealII
-IPC base: 1.096
-IPC target: 1.102
-IPC change avg: 0.571%
-IPC change min: 0.125
-IPC change max: 0.135
-CPI base: 0.913
-CPI target: 0.907
-CPI change avg: -0.568%
-CPI change min: 0.134
-CPI change max: 0.123
-
-bwaves
-IPC base: 0.796
-IPC target: 0.787
-IPC change avg: -1.187%
-IPC change min: 0.058
-IPC change max: 0.055
-CPI base: 1.256
-CPI target: 1.271
-CPI change avg: 1.201%
-CPI change min: 0.056
-CPI change max: 0.06
+gobmk
+IPC base: 0.927
+IPC target: 0.915
+IPC change avg: -1.332%
+IPC change min: 0.032
+IPC change max: 0.031
+CPI base: 1.079
+CPI target: 1.093
+CPI change avg: 1.35%
+CPI change min: 0.032
+CPI change max: 0.033
 
 gromacs
 IPC base: 0.924
@@ -154,149 +130,17 @@ CPI change avg: 1.049%
 CPI change min: 0.016
 CPI change max: 0.016
 
-sphinx3
-IPC base: 0.84
-IPC target: 1.305
-IPC change avg: 55.378%
-IPC change min: 2.585
-IPC change max: 2.743
-CPI base: 1.191
-CPI target: 0.767
-CPI change avg: -35.633%
-CPI change min: 1.124
-CPI change max: 1.081
-
-soplex
-IPC base: 0.405
-IPC target: 0.515
-IPC change avg: 27.192%
-IPC change min: 1.655
-IPC change max: 1.365
-CPI base: 2.468
-CPI target: 1.94
-CPI change avg: -21.374%
-CPI change min: 0.84
-CPI change max: 1.032
-
-calculix
+h264ref
 IPC base: 1.16
-IPC target: 1.15
-IPC change avg: -0.911%
-IPC change min: 0.011
-IPC change max: 0.011
+IPC target: 1.141
+IPC change avg: -1.714%
+IPC change min: 0.039
+IPC change max: 0.038
 CPI base: 0.862
-CPI target: 0.87
-CPI change avg: 0.919%
-CPI change min: 0.011
-CPI change max: 0.011
-
-astar
-IPC base: 0.525
-IPC target: 0.544
-IPC change avg: 3.525%
-IPC change min: 0.754
-IPC change max: 0.273
-CPI base: 1.905
-CPI target: 1.84
-CPI change avg: -3.404%
-CPI change min: 0.255
-CPI change max: 0.708
-
-gobmk
-IPC base: 0.927
-IPC target: 0.915
-IPC change avg: -1.332%
-IPC change min: 0.032
-IPC change max: 0.031
-CPI base: 1.079
-CPI target: 1.093
-CPI change avg: 1.35%
-CPI change min: 0.032
-CPI change max: 0.033
-
-sjeng
-IPC base: 1.103
-IPC target: 1.082
-IPC change avg: -1.868%
-IPC change min: 0.045
-IPC change max: 0.043
-CPI base: 0.907
-CPI target: 0.924
-CPI change avg: 1.903%
-CPI change min: 0.045
-CPI change max: 0.046
-
-wrf
-IPC base: 0.796
-IPC target: 0.773
-IPC change avg: -2.791%
-IPC change min: 0.186
-IPC change max: 0.183
-CPI base: 1.257
-CPI target: 1.293
-CPI change avg: 2.871%
-CPI change min: 0.193
-CPI change max: 0.197
-
-leslie3d
-IPC base: 0.19
-IPC target: 0.593
-IPC change avg: 212.264%
-IPC change min: 11.478
-IPC change max: 11.973
-CPI base: 5.268
-CPI target: 1.688
-CPI change avg: -67.958%
-CPI change min: 1.201
-CPI change max: 1.204
-
-bzip2
-IPC base: 1.026
-IPC target: 0.964
-IPC change avg: -6.014%
-IPC change min: 0.181
-IPC change max: 0.275
-CPI base: 0.975
-CPI target: 1.037
-CPI change avg: 6.399%
-CPI change min: 0.311
-CPI change max: 0.205
-
-omnetpp
-IPC base: 0.252
-IPC target: 0.308
-IPC change avg: 22.072%
-IPC change min: 4.294
-IPC change max: 2.0
-CPI base: 3.963
-CPI target: 3.247
-CPI change avg: -18.061%
-CPI change min: 1.34
-CPI change max: 2.967
-
-mcf
-IPC base: 0.146
-IPC target: 0.13
-IPC change avg: -11.334%
-IPC change min: 0.743
-IPC change max: 1.968
-CPI base: 6.839
-CPI target: 7.714
-CPI change avg: 12.794%
-CPI change min: 2.459
-CPI change max: 0.942
-
-tonto
-IPC base: 1.079
-IPC target: 1.087
-IPC change avg: 0.753%
-IPC change min: 0.011
-IPC change max: 0.007
-CPI base: 0.927
-CPI target: 0.92
-CPI change avg: -0.747%
-CPI change min: 0.007
-CPI change max: 0.011
+CPI target: 0.877
+CPI change avg: 1.744%
+CPI change min: 0.039
+CPI change max: 0.041
 
 hmmer
 IPC base: 1.8
@@ -310,17 +154,53 @@ CPI change avg: 0.135%
 CPI change min: 0.001
 CPI change max: 0.001
 
-cactusADM
-IPC base: 0.8
-IPC target: 0.792
-IPC change avg: -0.974%
-IPC change min: 0.09
-IPC change max: 0.081
-CPI base: 1.25
-CPI target: 1.262
-CPI change avg: 0.984%
-CPI change min: 0.082
-CPI change max: 0.091
+lbm
+IPC base: 0.444
+IPC target: 0.751
+IPC change avg: 69.138%
+IPC change min: 7.967
+IPC change max: 9.187
+CPI base: 2.252
+CPI target: 1.333
+CPI change avg: -40.816%
+CPI change min: 3.106
+CPI change max: 2.862
+
+leslie3d
+IPC base: 0.19
+IPC target: 0.593
+IPC change avg: 212.264%
+IPC change min: 11.478
+IPC change max: 11.973
+CPI base: 5.268
+CPI target: 1.688
+CPI change avg: -67.958%
+CPI change min: 1.201
+CPI change max: 1.204
+
+libquantum
+IPC base: 0.579
+IPC target: 1.05
+IPC change avg: 81.35%
+IPC change min: 3.255
+IPC change max: 1.717
+CPI base: 1.727
+CPI target: 0.952
+CPI change avg: -44.853%
+CPI change min: 0.522
+CPI change max: 1.003
+
+mcf
+IPC base: 0.146
+IPC target: 0.13
+IPC change avg: -11.334%
+IPC change min: 0.743
+IPC change max: 1.968
+CPI base: 6.839
+CPI target: 7.714
+CPI change avg: 12.794%
+CPI change min: 2.459
+CPI change max: 0.942
 
 milc
 IPC base: 0.57
@@ -334,14 +214,134 @@ CPI change avg: -2.606%
 CPI change min: 0.213
 CPI change max: 0.194
 
-libquantum
-IPC base: 0.579
-IPC target: 1.05
-IPC change avg: 81.35%
-IPC change min: 3.255
-IPC change max: 1.717
-CPI base: 1.727
-CPI target: 0.952
-CPI change avg: -44.853%
-CPI change min: 0.522
-CPI change max: 1.003
+namd
+IPC base: 1.321
+IPC target: 1.318
+IPC change avg: -0.202%
+IPC change min: 0.0
+IPC change max: 0.0
+CPI base: 0.757
+CPI target: 0.759
+CPI change avg: 0.202%
+CPI change min: 0.0
+CPI change max: 0.0
+
+omnetpp
+IPC base: 0.252
+IPC target: 0.308
+IPC change avg: 22.072%
+IPC change min: 4.294
+IPC change max: 2.0
+CPI base: 3.963
+CPI target: 3.247
+CPI change avg: -18.061%
+CPI change min: 1.34
+CPI change max: 2.967
+
+perlbench
+IPC base: 1.296
+IPC target: 1.258
+IPC change avg: -2.911%
+IPC change min: 0.098
+IPC change max: 0.092
+CPI base: 0.772
+CPI target: 0.795
+CPI change avg: 2.999%
+CPI change min: 0.098
+CPI change max: 0.104
+
+povray
+IPC base: 0.958
+IPC target: 0.958
+IPC change avg: -0.05%
+IPC change min: 0.0
+IPC change max: 0.0
+CPI base: 1.044
+CPI target: 1.044
+CPI change avg: 0.05%
+CPI change min: 0.0
+CPI change max: 0.0
+
+sjeng
+IPC base: 1.103
+IPC target: 1.082
+IPC change avg: -1.868%
+IPC change min: 0.045
+IPC change max: 0.043
+CPI base: 0.907
+CPI target: 0.924
+CPI change avg: 1.903%
+CPI change min: 0.045
+CPI change max: 0.046
+
+soplex
+IPC base: 0.405
+IPC target: 0.515
+IPC change avg: 27.192%
+IPC change min: 1.655
+IPC change max: 1.365
+CPI base: 2.468
+CPI target: 1.94
+CPI change avg: -21.374%
+CPI change min: 0.84
+CPI change max: 1.032
+
+sphinx3
+IPC base: 0.84
+IPC target: 1.305
+IPC change avg: 55.378%
+IPC change min: 2.585
+IPC change max: 2.743
+CPI base: 1.191
+CPI target: 0.767
+CPI change avg: -35.633%
+CPI change min: 1.124
+CPI change max: 1.081
+
+tonto
+IPC base: 1.079
+IPC target: 1.087
+IPC change avg: 0.753%
+IPC change min: 0.011
+IPC change max: 0.007
+CPI base: 0.927
+CPI target: 0.92
+CPI change avg: -0.747%
+CPI change min: 0.007
+CPI change max: 0.011
+
+wrf
+IPC base: 0.796
+IPC target: 0.773
+IPC change avg: -2.791%
+IPC change min: 0.186
+IPC change max: 0.183
+CPI base: 1.257
+CPI target: 1.293
+CPI change avg: 2.871%
+CPI change min: 0.193
+CPI change max: 0.197
+
+xalancbmk
+IPC base: 0.607
+IPC target: 0.592
+IPC change avg: -2.459%
+IPC change min: 0.558
+IPC change max: 0.387
+CPI base: 1.647
+CPI target: 1.688
+CPI change avg: 2.522%
+CPI change min: 0.407
+CPI change max: 0.589
+
+zeusmp
+IPC base: 0.829
+IPC target: 0.801
+IPC change avg: -3.388%
+IPC change min: 0.118
+IPC change max: 0.182
+CPI base: 1.206
+CPI target: 1.248
+CPI change avg: 3.507%
+CPI change min: 0.194
+CPI change max: 0.127

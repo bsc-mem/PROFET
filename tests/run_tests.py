@@ -2,6 +2,24 @@ import os
 import sys
 import subprocess
 import contextlib
+import difflib
+
+
+def color_diff(diff_lines):
+    # Color the diff output in case of tests failure
+    # ANSI escape codes for colors
+    green = '\033[92m'
+    red = '\033[91m'
+    reset = '\033[0m'
+    colored_diff = []
+    for line in diff_lines:
+        if line.startswith('+'):
+            colored_diff.append(green + line + reset)
+        elif line.startswith('-'):
+            colored_diff.append(red + line + reset)
+        else:
+            colored_diff.append(line)
+    return colored_diff
 
 
 def run_tests():
@@ -12,7 +30,6 @@ def run_tests():
     test_dir = 'tests/knl_ddr4-2400_mcdram'
     new_out_path = os.path.join(test_dir, 'new.out')
     expected_out_path = os.path.join(test_dir, 'expected.out')
-    diff_path = os.path.join(test_dir, 'expected_vs_new.diff')
 
     # Remove the old out file if it exists
     if os.path.exists(new_out_path):
@@ -28,7 +45,8 @@ def run_tests():
             app_profiles_path = 'tests/app_profiles/DDR4-2400_trace/'
             profiles = os.listdir(app_profiles_path)
             benchmarks = [d for d in profiles
-                        if os.path.isdir(os.path.join(app_profiles_path, d))]
+                          if os.path.isdir(os.path.join(app_profiles_path, d))]
+            benchmarks = sorted(benchmarks)
 
             for benchmark in benchmarks:
                 print(benchmark, flush=True)
@@ -51,13 +69,23 @@ def run_tests():
         new_out_lines = new_out_file.readlines()
         expected_out_lines = expected_out_file.readlines()
 
-    print(new_out_lines)
     if new_out_lines == expected_out_lines:
+        # Return 0 to indicate success
         print(f"{OK_COL}[ OK ]")
-        return 0  # Return 0 to indicate success
+        return 0
 
+    # Print difference
+    diff = difflib.unified_diff(
+        expected_out_lines, new_out_lines,
+        fromfile=expected_out_path,
+        tofile=new_out_path,
+        lineterm=''
+    )
+    colored_diff = color_diff(diff)
+    sys.stdout.writelines(colored_diff)
     print(f"{BAD_COL}[FAIL]")
     sys.exit(1)  # Exit with 1 to indicate failure
+
 
 if __name__ == '__main__':
     run_tests()
