@@ -76,6 +76,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#profet.curves.Curves.warn_read_ratio_pct_diff"><code class="docutils literal notranslate"><span class="pre">Curves.warn_read_ratio_pct_diff</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#profet.curves.bw_high_warning"><code class="docutils literal notranslate"><span class="pre">bw_high_warning()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#profet.curves.check_ratio"><code class="docutils literal notranslate"><span class="pre">check_ratio()</span></code></a></li>
 </ul>
 </li>
@@ -121,7 +122,8 @@
 <dt class="sig sig-object py" id="profet.curves.OvershootError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profet.curves.</span></span><span class="sig-name descname"><span class="pre">OvershootError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requested_bw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><span class="pre">Bandwidth</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#profet.curves.OvershootError" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Deals with bandwidths larger than the largest recorded bandwidth for a given curve.</p>
+<p>Deals with bandwidths larger than the largest recorded bandwidth for
+a given curve.</p>
 </dd></dl>
 
 <dl class="py exception">
@@ -135,7 +137,8 @@
 <dt class="sig sig-object py" id="profet.curves.ReadRatioMismatchError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profet.curves.</span></span><span class="sig-name descname"><span class="pre">ReadRatioMismatchError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">curve_read_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#profet.curves.ReadRatioMismatchError" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Deals with read ratios that are too far from the ones computed in the curves.</p>
+<p>Deals with read ratios that are too far from the ones computed in
+the curves.</p>
 </dd></dl>
 
 <dl class="py class">
@@ -149,10 +152,13 @@
 <dd><p>Bandwidths of the curve.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned bandwidths. Defaults to None. If None, bandwidhts are returned in the same units as the bandwidths given at object initialization</p>
+<dd class="field-odd"><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned bandwidths.
+Defaults to None.
+If None, bandwidhts are returned in the same units as
+the bandwidths given at object initialization.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>bandwidths of the curve</p>
+<dd class="field-even"><p>bandwidths of the curve.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bws (list[<a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth">Bandwidth</a>])</p>
@@ -167,13 +173,24 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>bw_unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned bandwidths. Defaults to None. If None, bandwidhts are returned in the same units as the bandwidths given at object initialization</p></li>
-<li><p><strong>lat_unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latencies. Defaults to None. If None, latency is returned in the same units as the latencies given at object initialization</p></li>
-<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed when latency units are in time units, e.g. ns, us, s)</p></li>
+<li><p><strong>bw_unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned bandwidths.
+Defaults to None.
+If None, bandwidhts are returned in the same units as
+the bandwidths given at object initialization.</p></li>
+<li><p><strong>lat_unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latencies.
+Defaults to None. If None, latency is returned in the
+same units as the latencies given at object initialization.</p></li>
+<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed
+when latency units are in time units, e.g. ns, us, s).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>bandwidths and latencies of the curve in a list of tuples for each bw-lat pair</p>
+<dd class="field-even"><p><dl class="simple">
+<dt>bandwidths</dt><dd><p>and latencies of the curve in a list of tuples for each
+bw-lat pair.</p>
+</dd>
+</dl>
+</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>curve_bw_lats (list[tuple[<a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth">Bandwidth</a>, <a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency">Latency</a>]])</p>
@@ -185,21 +202,30 @@
 <dt class="sig sig-object py" id="profet.curves.Curve.get_lat">
 <span class="sig-name descname"><span class="pre">get_lat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><span class="pre">Bandwidth</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><span class="pre">Frequency</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency"><span class="pre">Latency</span></a></span></span><a class="headerlink" href="#profet.curves.Curve.get_lat" title="Link to this definition"></a></dt>
 <dd><p>Latency for provided bandwidth.
-Linear interpolation is used to calculate latency between two recorded points.</p>
-<p>If provided bandwidth is smaller than the smallest recorded sample, the latency corresponding to the smallest recorded bandwidth is returned.
+Linear interpolation is used to calculate latency between two
+recorded points.</p>
+<p>If provided bandwidth is smaller than the smallest recorded
+sample, the latency corresponding to the smallest recorded
+bandwidth is returned.
 The rationale is that curve at this point is usually constant.</p>
-<p>If provided banwdith is larger than the largest recorded sample, an exception is thrown.
-The rationale is that the curve beyond the max bandwidth is exponential and it is difficult to find a good estimate for latency.</p>
+<p>If provided banwdith is larger than the largest recorded sample,
+an exception is thrown.
+The rationale is that the curve beyond the max bandwidth is
+exponential and it is difficult to find a good estimate for latency.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>bw</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><em>Bandwidth</em></a>) – bandwidth</p></li>
-<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latency. Defaults to None. If None, latency is returned in the same units as the latencies given at object initialization</p></li>
-<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed when latency units are in time units, e.g. ns, us, s)</p></li>
+<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latency.
+Defaults to None.
+If None, latency is returned in the same units as the
+latencies given at object initialization.</p></li>
+<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed
+when latency units are in time units, e.g. ns, us, s).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>latency for the given bandwidth</p>
+<dd class="field-even"><p>latency for the given bandwidth.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>latency (<a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency">Latency</a>)</p>
@@ -209,17 +235,21 @@ The rationale is that the curve beyond the max bandwidth is exponential and it i
 
 <dl class="py method">
 <dt class="sig sig-object py" id="profet.curves.Curve.get_lats">
-<span class="sig-name descname"><span class="pre">get_lats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency"><span class="pre">Latency</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#profet.curves.Curve.get_lats" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_lats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><span class="pre">Frequency</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency"><span class="pre">Latency</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#profet.curves.Curve.get_lats" title="Link to this definition"></a></dt>
 <dd><p>Latencies of the curve.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latencies. Defaults to None. If None, latencies are returned in the same units as the latencies given at object initialization</p></li>
-<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed when latency units are in time units, e.g. ns, us, s)</p></li>
+<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latencies.
+Defaults to None.
+If None, latencies are returned in the same units as the
+latencies given at object initialization.</p></li>
+<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed
+when latency units are in time units, e.g. ns, us, s).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>latencies of the curve</p>
+<dd class="field-even"><p>latencies of the curve.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>lats (list[<a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency">Latency</a>])</p>
@@ -234,12 +264,20 @@ The rationale is that the curve beyond the max bandwidth is exponential and it i
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latency. Defaults to None. If None, latency is returned in the same units as the latencies given at object initialization</p></li>
-<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed when latency units are in time units, e.g. ns, us, s)</p></li>
+<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latency.
+Defaults to None.
+If None, latency is returned in the same units as the
+latencies given at object initialization.</p></li>
+<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed
+when latency units are in time units, e.g. ns, us, s).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>lead-off (minimum) latency for the given curve</p>
+<dd class="field-even"><p><dl class="simple">
+<dt>lead-off (minimum) latency for the</dt><dd><p>given curve.</p>
+</dd>
+</dl>
+</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>lead_off_lat (<a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency">Latency</a>)</p>
@@ -253,10 +291,13 @@ The rationale is that the curve beyond the max bandwidth is exponential and it i
 <dd><p>Maximum recorded bandwidth for the given curve.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned bandwidth. Defaults to None. If None, bandwidth is returned in the same units as the bandwidths given at object initialization</p>
+<dd class="field-odd"><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned bandwidth.
+Defaults to None.
+If None, bandwidth is returned in the same units as the
+bandwidths given at object initialization.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>maximum recorded bandwidth for the given curve</p>
+<dd class="field-even"><p>maximum recorded bandwidth for the given curve.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>max_bw (<a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth">Bandwidth</a>)</p>
@@ -271,12 +312,16 @@ The rationale is that the curve beyond the max bandwidth is exponential and it i
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latency. Defaults to None. If None, latency is returned in the same units as the latencies given at object initialization</p></li>
-<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed when latency units are in time units, e.g. ns, us, s)</p></li>
+<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latency.
+Defaults to None.
+If None, latency is returned in the same units as the
+latencies given at object initialization.</p></li>
+<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed
+when latency units are in time units, e.g. ns, us, s).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>maximum recorded latency for the given curve</p>
+<dd class="field-even"><p>maximum recorded latency for the given curve.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>max_lat (<a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency">Latency</a>)</p>
@@ -291,10 +336,10 @@ The rationale is that the curve beyond the max bandwidth is exponential and it i
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>bw</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><em>Bandwidth</em></a>) – bandwidth</p></li>
-<li><p><strong>lat</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency"><em>Latency</em></a>) – latency</p></li>
-<li><p><strong>lead_off_lat</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency"><em>Latency</em></a>) – lead-off (minimum) latency</p></li>
-<li><p><strong>max_lat</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency"><em>Latency</em></a>) – maximum latency</p></li>
+<li><p><strong>bw</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><em>Bandwidth</em></a>) – bandwidth.</p></li>
+<li><p><strong>lat</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency"><em>Latency</em></a>) – latency.</p></li>
+<li><p><strong>lead_off_lat</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency"><em>Latency</em></a>) – lead-off (minimum) latency.</p></li>
+<li><p><strong>max_lat</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency"><em>Latency</em></a>) – maximum latency.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -312,16 +357,18 @@ The rationale is that the curve beyond the max bandwidth is exponential and it i
 <dt class="sig sig-object py" id="profet.curves.Curves">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profet.curves.</span></span><span class="sig-name descname"><span class="pre">Curves</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">curves_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_warnings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#profet.curves.Curves" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Curves class for loading all the curve objects (bandwidth and latency points) from the curve files.
-It is assumed the curve files contain bandwidth data in MBps and latency data in cycles.
-# TODO: add optional parameters to specify the units of the bandwidth and latency data in the curve files</p>
+<p>Curves class for loading all the curve objects (bandwidth and
+latency points) from the curve files.
+It is assumed the curve files contain bandwidth data in MBps and
+latency data in cycles.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="profet.curves.Curves.get_bws">
 <span class="sig-name descname"><span class="pre">get_bws</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'MBps'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#profet.curves.Curves.get_bws" title="Link to this definition"></a></dt>
-<dd><p>Returns bandwidths of the curves</p>
+<dd><p>Returns bandwidths of the curves.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned bandwidths. Defaults to ‘MBps’.</p>
+<dd class="field-odd"><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned bandwidths.
+Defaults to ‘MBps’.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -329,10 +376,10 @@ It is assumed the curve files contain bandwidth data in MBps and latency data in
 <dl class="py method">
 <dt class="sig sig-object py" id="profet.curves.Curves.get_curve">
 <span class="sig-name descname"><span class="pre">get_curve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#profet.curves.Curve" title="profet.curves.Curve"><span class="pre">Curve</span></a></span></span><a class="headerlink" href="#profet.curves.Curves.get_curve" title="Link to this definition"></a></dt>
-<dd><p>Returns the curve for the given read ratio</p>
+<dd><p>Returns the curve for the given read ratio.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>read_ratio</strong> (<em>float</em>) – read ratio</p>
+<dd class="field-odd"><p><strong>read_ratio</strong> (<em>float</em>) – read ratio.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -340,13 +387,17 @@ It is assumed the curve files contain bandwidth data in MBps and latency data in
 <dl class="py method">
 <dt class="sig sig-object py" id="profet.curves.Curves.get_curves_bws_lats">
 <span class="sig-name descname"><span class="pre">get_curves_bws_lats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bw_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'MBps'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'cycles'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><span class="pre">Frequency</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#profet.curves.Curves.get_curves_bws_lats" title="Link to this definition"></a></dt>
-<dd><p>Returns bandwidths and latencies in a list of tuples (bw-lat pairs) of the curves</p>
+<dd><p>Returns bandwidths and latencies in a list of tuples
+(bw-lat pairs) of the curves.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>bw_unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned bandwidths. Defaults to ‘MBps’.</p></li>
-<li><p><strong>lat_unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latencies. Defaults to ‘cycles’.</p></li>
-<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed when latency units are in time units, e.g. ns, us, s)</p></li>
+<li><p><strong>bw_unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned bandwidths.
+Defaults to ‘MBps’.</p></li>
+<li><p><strong>lat_unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latencies.
+Defaults to ‘cycles’.</p></li>
+<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed
+when latency units are in time units, e.g. ns, us, s).</p></li>
 </ul>
 </dd>
 </dl>
@@ -354,15 +405,17 @@ It is assumed the curve files contain bandwidth data in MBps and latency data in
 
 <dl class="py method">
 <dt class="sig sig-object py" id="profet.curves.Curves.get_lat">
-<span class="sig-name descname"><span class="pre">get_lat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><span class="pre">Bandwidth</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'cycles'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><span class="pre">Frequency</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#profet.curves.Curves.get_lat" title="Link to this definition"></a></dt>
-<dd><p>Returns latency for given read ratio and bandwidth</p>
+<span class="sig-name descname"><span class="pre">get_lat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><span class="pre">Bandwidth</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'cycles'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><span class="pre">Frequency</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency"><span class="pre">Latency</span></a></span></span><a class="headerlink" href="#profet.curves.Curves.get_lat" title="Link to this definition"></a></dt>
+<dd><p>Returns latency for given read ratio and bandwidth.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>read_ratio</strong> (<em>float</em>) – read ratio</p></li>
-<li><p><strong>bw</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><em>Bandwidth</em></a>) – bandwidth</p></li>
-<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latency. Defaults to ‘cycles’.</p></li>
-<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed when latency units are in time units, e.g. ns, us, s)</p></li>
+<li><p><strong>read_ratio</strong> (<em>float</em>) – read ratio.</p></li>
+<li><p><strong>bw</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><em>Bandwidth</em></a>) – bandwidth.</p></li>
+<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latency.
+Defaults to ‘cycles’.</p></li>
+<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed
+when latency units are in time units, e.g. ns, us, s).</p></li>
 </ul>
 </dd>
 </dl>
@@ -371,12 +424,14 @@ It is assumed the curve files contain bandwidth data in MBps and latency data in
 <dl class="py method">
 <dt class="sig sig-object py" id="profet.curves.Curves.get_lats">
 <span class="sig-name descname"><span class="pre">get_lats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'cycles'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><span class="pre">Frequency</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#profet.curves.Curves.get_lats" title="Link to this definition"></a></dt>
-<dd><p>Returns latencies of the curves</p>
+<dd><p>Returns latencies of the curves.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latencies. Defaults to ‘cycles’.</p></li>
-<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed when latency units are in time units, e.g. ns, us, s)</p></li>
+<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latencies.
+Defaults to ‘cycles’.</p></li>
+<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed
+when latency units are in time units, e.g. ns, us, s).</p></li>
 </ul>
 </dd>
 </dl>
@@ -385,13 +440,15 @@ It is assumed the curve files contain bandwidth data in MBps and latency data in
 <dl class="py method">
 <dt class="sig sig-object py" id="profet.curves.Curves.get_lead_off_lat">
 <span class="sig-name descname"><span class="pre">get_lead_off_lat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'cycles'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><span class="pre">Frequency</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#profet.curves.Curves.get_lead_off_lat" title="Link to this definition"></a></dt>
-<dd><p>Returns lead-off (minimum) latency for the given read ratio</p>
+<dd><p>Returns lead-off (minimum) latency for the given read ratio.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>read_ratio</strong> (<em>float</em>) – read ratio</p></li>
-<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latency. Defaults to ‘cycles’.</p></li>
-<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed when latency units are in time units, e.g. ns, us, s)</p></li>
+<li><p><strong>read_ratio</strong> (<em>float</em>) – read ratio.</p></li>
+<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latency.
+Defaults to ‘cycles’.</p></li>
+<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed
+when latency units are in time units, e.g. ns, us, s).</p></li>
 </ul>
 </dd>
 </dl>
@@ -400,12 +457,13 @@ It is assumed the curve files contain bandwidth data in MBps and latency data in
 <dl class="py method">
 <dt class="sig sig-object py" id="profet.curves.Curves.get_max_bw">
 <span class="sig-name descname"><span class="pre">get_max_bw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'MBps'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#profet.curves.Curves.get_max_bw" title="Link to this definition"></a></dt>
-<dd><p>Returns maximum recorded bandwidth for the given read ratio</p>
+<dd><p>Returns maximum recorded bandwidth for the given read ratio.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>read_ratio</strong> (<em>float</em>) – read ratio</p></li>
-<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of bandwidth (check supported_unit in utils.py) of the returned bandwidth. Defaults to ‘MBps’.</p></li>
+<li><p><strong>read_ratio</strong> (<em>float</em>) – read ratio.</p></li>
+<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned bandwidth.
+Defaults to ‘MBps’.</p></li>
 </ul>
 </dd>
 </dl>
@@ -414,13 +472,15 @@ It is assumed the curve files contain bandwidth data in MBps and latency data in
 <dl class="py method">
 <dt class="sig sig-object py" id="profet.curves.Curves.get_max_lat">
 <span class="sig-name descname"><span class="pre">get_max_lat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'cycles'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><span class="pre">Frequency</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#profet.curves.Curves.get_max_lat" title="Link to this definition"></a></dt>
-<dd><p>Returns maximum recorded latency for the given read ratio</p>
+<dd><p>Returns maximum recorded latency for the given read ratio.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>read_ratio</strong> (<em>float</em>) – read ratio</p></li>
-<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latency. Defaults to ‘cycles’.</p></li>
-<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed when latency units are in time units, e.g. ns, us, s)</p></li>
+<li><p><strong>read_ratio</strong> (<em>float</em>) – read ratio.</p></li>
+<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>optional</em>) – units of the returned latency.
+Defaults to ‘cycles’.</p></li>
+<li><p><strong>freq</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Frequency" title="profet.metrics.Frequency"><em>Frequency</em></a><em>, </em><em>optional</em>) – memory frequency (only needed
+when latency units are in time units, e.g. ns, us, s).</p></li>
 </ul>
 </dd>
 </dl>
@@ -429,18 +489,18 @@ It is assumed the curve files contain bandwidth data in MBps and latency data in
 <dl class="py method">
 <dt class="sig sig-object py" id="profet.curves.Curves.get_read_ratios">
 <span class="sig-name descname"><span class="pre">get_read_ratios</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#profet.curves.Curves.get_read_ratios" title="Link to this definition"></a></dt>
-<dd><p>Returns read ratios of the curves</p>
+<dd><p>Returns read ratios of the curves.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="profet.curves.Curves.get_stress_score">
 <span class="sig-name descname"><span class="pre">get_stress_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bandwidth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><span class="pre">Bandwidth</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#profet.curves.Curves.get_stress_score" title="Link to this definition"></a></dt>
-<dd><p>Returns stress score for the given read ratio and bandwidth</p>
+<dd><p>Returns stress score for the given read ratio and bandwidth.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>read_ratio</strong> (<em>float</em>) – read ratio</p></li>
-<li><p><strong>bandwidth</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><em>Bandwidth</em></a>) – bandwidth</p></li>
+<li><p><strong>read_ratio</strong> (<em>float</em>) – read ratio.</p></li>
+<li><p><strong>bandwidth</strong> (<a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><em>Bandwidth</em></a>) – bandwidth.</p></li>
 </ul>
 </dd>
 </dl>
@@ -457,6 +517,11 @@ It is assumed the curve files contain bandwidth data in MBps and latency data in
 <dd></dd></dl>
 
 </dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="profet.curves.bw_high_warning">
+<span class="sig-prename descclassname"><span class="pre">profet.curves.</span></span><span class="sig-name descname"><span class="pre">bw_high_warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requested_bw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><span class="pre">Bandwidth</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_bw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Bandwidth" title="profet.metrics.Bandwidth"><span class="pre">Bandwidth</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metrics.html#profet.metrics.Latency" title="profet.metrics.Latency"><span class="pre">Latency</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#profet.curves.bw_high_warning" title="Link to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="profet.curves.check_ratio">
