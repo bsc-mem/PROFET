@@ -39,7 +39,6 @@ def run_tests():
                 mem_target = os.path.join('tests/data/bw_lat_curves/mcdram.json')
 
                 call = f'{run_file} -w -a {app_profile} -c {config} --mem-base {mem_baseline} --mem-target {mem_target}'
-                # os.system(call)
                 # Redirecting stdout and stderr of the subprocess to the new_out_file
                 subprocess.run(call, shell=True, stdout=new_out_file, stderr=new_out_file)
 
@@ -51,12 +50,13 @@ def run_tests():
         new_out_lines = new_out_file.readlines()
         expected_out_lines = expected_out_file.readlines()
 
+    print(new_out_lines)
     if new_out_lines == expected_out_lines:
         print(f"{OK_COL}[ OK ]")
         return 0  # Return 0 to indicate success
-    else:
-        print(f"{BAD_COL}[FAIL]")
-        return 1  # Return 1 to indicate failure
+
+    print(f"{BAD_COL}[FAIL]")
+    return 1  # Return 1 to indicate failure
 
 if __name__ == '__main__':
     run_tests()
